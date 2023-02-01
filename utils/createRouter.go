@@ -3,7 +3,6 @@ package utils
 import (
 	"os"
 	"path"
-	"strings"
 
 	"github.com/spf13/viper"
 )
@@ -30,9 +29,9 @@ func CreateRouter() {
 		UpperCaseName: upperCaseName,
 		ProjectName:   projectName,
 	})
-	// generate the router index
-	routes := strings.Split(viper.GetString("routes"), ",")
-	templateFile = path.Join(base, viper.GetString("router.index.template"))
-	targetFile = path.Join(base, viper.GetString("router.index.target"))
-	RenderTemplate(templateFile, targetFile, &RouterTemplateData{Routes: routes})
+	// // generate the router index
+	// routes := strings.Split(viper.GetString("routes"), ",")
+	// templateFile = path.Join(base, viper.GetString("router.index.template"))
+	// targetFile = path.Join(base, viper.GetString("router.index.target"))
+	// RenderTemplate(templateFile, targetFile, &RouterTemplateData{Routes: routes})
 }
